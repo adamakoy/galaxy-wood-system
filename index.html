@@ -50,7 +50,7 @@ function unlockApp(){
 loginForm.addEventListener('submit',function(e){e.preventDefault();unlockApp();});
 if(sessionStorage.getItem('gwlogin')==='1'){loginOverlay.style.display='none';}else{document.body.style.overflow='hidden';setTimeout(()=>loginUser.focus(),100);}
 function logout(){sessionStorage.removeItem('gwlogin');location.reload();}
-</script></body></html>+(+n||0).toFixed(2),day=()=>new Date().toLocaleDateString('en-CA');
++(+n||0).toFixed(2),day=()=>new Date().toLocaleDateString('en-CA');
 let db=JSON.parse(localStorage.getItem('gwdb')||'{"products":[],"sales":[],"purchases":[],"expenses":[]}'),lines=[];const save=()=>{localStorage.setItem('gwdb',JSON.stringify(db));render()};
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));$(b.dataset.t).classList.add('on');document.querySelectorAll('nav button').forEach(x=>x.className='');b.className='primary'});
 function addP(){if(!pn.value.trim())return;db.products.push({id:Date.now(),name:pn.value,code:pc.value,qty:+pq.value||0,buy:+pb.value||0,sell:+ps.value||0});pn.value=pc.value=pq.value=pb.value=ps.value='';save()}function delP(id){if(confirm('دڵنیایت؟')){db.products=db.products.filter(x=>x.id!=id);save()}}
